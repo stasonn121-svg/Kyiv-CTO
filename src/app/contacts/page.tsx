@@ -13,14 +13,17 @@ export default function ContactsPage() {
       {/* Hero / Map */}
       <section className="relative w-full h-[500px] lg:h-[614px] overflow-hidden bg-surface-container-low pt-20">
         <div className="absolute inset-0 z-0">
-          <img
-            className="w-full h-full object-cover opacity-40 grayscale contrast-125"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxOGywcpaRgBpYWgzE3LnTmYF7kd5Yn0MbrkLCXbUine2WvrwM3Rv-nlw-1mq501cLOWm3IgNkF97guQaVhk-JfDNNIo7IB3hd-dFxarI9W2z2wReyczEf3D0Cq9LV9DX7HFv3rfCU2npow4cqDKVAADATfacGrpw97vkVmlrshqMJ8Jnop6Ji9oQLGRZitGBUaXpi3LVeli6xpxzTMzaHAX94znOzEndLoM8KrNOZndLGBr1K8NycXTCTlJqdcBPTiMe-2GKMEi8"
-            alt="Карта Києва"
+          <iframe
+            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2538.5!2d${SITE_CONFIG.geo.lng}!3d${SITE_CONFIG.geo.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDMwJzI3LjciTiAzMMKwMjknNTMuOSJF!5e0!3m2!1suk!2sua!4v1`}
+            className="w-full h-full border-0 grayscale opacity-60"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Auto Service Garage на карті"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background pointer-events-none" />
         </div>
-        <div className="relative z-10 container mx-auto px-6 lg:px-10 h-full flex flex-col justify-end pb-16">
+        <div className="relative z-10 container mx-auto px-6 lg:px-10 h-full flex flex-col justify-end pb-16 pointer-events-none">
           <div className="max-w-2xl">
             <span className="font-headline text-secondary text-xs tracking-[0.3em] uppercase mb-4 block">
               Об&apos;єкт: Київ, Оболонь
@@ -55,6 +58,7 @@ export default function ContactsPage() {
                   icon={<LocationIcon />}
                   label="Адреса"
                   value={`${SITE_CONFIG.address.street}\n${SITE_CONFIG.address.district}, ${SITE_CONFIG.address.city}`}
+                  href={`https://www.google.com/maps/search/?api=1&query=${SITE_CONFIG.geo.lat},${SITE_CONFIG.geo.lng}`}
                 />
                 <ContactCard
                   icon={<ClockIcon />}
@@ -107,6 +111,7 @@ function ContactCard({
   sub?: string;
 }) {
   const ValueTag = href ? "a" : "p";
+  const isExternal = href?.startsWith("http");
   return (
     <div className="group bg-surface-container-low p-6 transition-all duration-200 hover:bg-surface-container border border-transparent hover:border-secondary/30">
       <div className="flex items-start gap-4">
@@ -117,7 +122,8 @@ function ContactCard({
           </p>
           <ValueTag
             {...(href ? { href } : {})}
-            className="font-headline text-xl font-bold whitespace-pre-line"
+            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            className="font-headline text-xl font-bold whitespace-pre-line hover:text-secondary transition-colors cursor-pointer"
           >
             {value}
           </ValueTag>
