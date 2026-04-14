@@ -46,8 +46,8 @@ export default function PortfolioGallery({ images, categories }: Props) {
 
   return (
     <>
-      <section className="px-6 lg:px-10 pb-24">
-        <div className="max-w-7xl mx-auto">
+      <section className="pb-24">
+        <div className="container mx-auto px-6 lg:px-10">
           {/* Category filters */}
           <div className="flex flex-wrap gap-3 mb-10">
             <button

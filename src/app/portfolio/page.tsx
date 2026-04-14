@@ -19,8 +19,8 @@ export default async function PortfolioPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 lg:px-10">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-32 pb-16">
+        <div className="container mx-auto px-6 lg:px-10">
           <span className="font-headline text-secondary text-xs tracking-[0.3em] uppercase mb-4 block">
             Наші / Роботи
           </span>
@@ -38,8 +38,8 @@ export default async function PortfolioPage() {
       {images.length > 0 ? (
         <PortfolioGallery images={images} categories={categories} />
       ) : (
-        <section className="px-6 lg:px-10 pb-24">
-          <div className="max-w-7xl mx-auto text-center py-20">
+        <section className="pb-24">
+          <div className="container mx-auto px-6 lg:px-10 text-center py-20">
             <p className="text-on-surface-variant text-lg">
               Фото робіт скоро з&apos;являться. Слідкуйте за оновленнями!
             </p>

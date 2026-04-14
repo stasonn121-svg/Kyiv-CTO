@@ -41,8 +41,8 @@ export default function ReviewsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 lg:px-10">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-32 pb-16">
+        <div className="container mx-auto px-6 lg:px-10">
           <span className="font-headline text-secondary text-xs tracking-[0.3em] uppercase mb-4 block">
             Технологічна довіра / 5.0
           </span>
@@ -56,8 +56,8 @@ export default function ReviewsPage() {
       </section>
 
       {/* Featured Review */}
-      <section className="px-6 lg:px-10 pb-16">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section className="pb-16">
+        <div className="container mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="bg-surface-container p-10 border border-outline-variant/20">
             <div className="flex gap-1 mb-6">
               {Array.from({ length: FEATURED_REVIEW.stars }).map((_, i) => (
@@ -96,8 +96,8 @@ export default function ReviewsPage() {
       </section>
 
       {/* More Reviews */}
-      <section className="px-6 lg:px-10 pb-16">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+      <section className="pb-16">
+        <div className="container mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-4">
           {REVIEWS.slice(2).map((review) => (
             <div key={review.name} className="bg-surface-container-low p-6 border border-outline-variant/20 hover:border-secondary/30 transition-colors">
               <p className="text-on-surface-variant text-sm mb-6 italic">&ldquo;{review.text}&rdquo;</p>
@@ -111,8 +111,8 @@ export default function ReviewsPage() {
       </section>
 
       {/* Leave review CTA */}
-      <section className="px-6 lg:px-10 pb-24">
-        <div className="max-w-7xl mx-auto">
+      <section className="pb-24">
+        <div className="container mx-auto px-6 lg:px-10">
           <div className="bg-surface-container p-10 border border-secondary/20">
             <h2 className="font-headline text-2xl font-bold uppercase mb-2">Залиште свій відгук</h2>
             <p className="text-on-surface-variant text-sm mb-6">Напишіть нам в Instagram або залиште заявку на сайті.</p>
