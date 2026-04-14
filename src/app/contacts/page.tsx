@@ -14,7 +14,7 @@ export default function ContactsPage() {
       <section className="relative w-full h-[500px] lg:h-[614px] overflow-hidden bg-surface-container-low pt-20">
         <div className="absolute inset-0 z-0">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500!2d30.4770974!3d50.5072997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d3e6bda77e5d%3A0xb09788540a23e4aa!2z0KHQotCeICws0JPQkNCg0JDQliws!5e0!3m2!1suk!2sua!4v1"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d30.4770974!3d50.5072997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d3e6bda77e5d%3A0xb09788540a23e4aa!2z0KHQotCeICws0JPQkNCg0JDQliws!5e0!3m2!1suk!2sua!4v1"
             className="w-full h-full border-0 grayscale opacity-60"
             allowFullScreen
             loading="lazy"
@@ -31,9 +31,20 @@ export default function ContactsPage() {
             <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none mb-6">
               AUTO SERVICE GARAGE
             </h1>
-            <p className="text-on-surface-variant font-light text-lg max-w-lg leading-relaxed">
+            <p className="text-on-surface-variant font-light text-lg max-w-lg leading-relaxed mb-6">
               Високоточна автомобільна діагностика та інжиніринг у Києві. Професійний сервіс для автомобілів будь-яких марок.
             </p>
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&destination=${SITE_CONFIG.geo.lat},${SITE_CONFIG.geo.lng}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pointer-events-auto inline-flex items-center gap-3 bg-primary-container text-on-primary font-headline font-bold uppercase tracking-widest text-sm px-8 py-4 hover:bg-primary-dim transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+              </svg>
+              Прокласти маршрут
+            </a>
           </div>
         </div>
       </section>
