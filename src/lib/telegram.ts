@@ -16,15 +16,15 @@ export async function sendToTelegram(data: ContactFormData): Promise<boolean> {
   }
 
   const lines = [
-    "🔔 *Нова заявка з сайту*",
+    "🔔 Нова заявка з сайту",
     "",
-    `👤 *Ім'я:* ${esc(data.name)}`,
-    `📞 *Телефон:* ${esc(data.phone)}`,
-    data.car ? `🚗 *Авто:* ${esc(data.car)}` : null,
-    data.service ? `🔧 *Послуга:* ${esc(data.service)}` : null,
-    data.message ? `\n💬 *Повідомлення:*\n${esc(data.message)}` : null,
+    `👤 Ім'я: ${data.name}`,
+    `📞 Телефон: ${data.phone}`,
+    data.car ? `🚗 Авто: ${data.car}` : null,
+    data.service ? `🔧 Послуга: ${data.service}` : null,
+    data.message ? `\n💬 Повідомлення:\n${data.message}` : null,
     "",
-    `🕐 ${esc(new Date().toLocaleString("uk-UA", { timeZone: "Europe/Kyiv" }))}`,
+    `🕐 ${new Date().toLocaleString("uk-UA", { timeZone: "Europe/Kyiv" })}`,
   ];
 
   const text = lines.filter(Boolean).join("\n");
@@ -38,7 +38,6 @@ export async function sendToTelegram(data: ContactFormData): Promise<boolean> {
         body: JSON.stringify({
           chat_id: TELEGRAM_CHAT_ID,
           text,
-          parse_mode: "MarkdownV2",
         }),
       }
     );
@@ -56,7 +55,3 @@ export async function sendToTelegram(data: ContactFormData): Promise<boolean> {
   }
 }
 
-/** Escape спецсимволів MarkdownV2 */
-function esc(text: string): string {
-  return text.replace(/([_*\[\]()~`>#+\-=|{}.!\\])/g, "\\$1");
-}
