@@ -57,7 +57,7 @@ export default function ContactsPage() {
                 <ContactCard
                   icon={<LocationIcon />}
                   label="Адреса"
-                  value={`${SITE_CONFIG.address.street}\n${SITE_CONFIG.address.district}, ${SITE_CONFIG.address.city}`}
+                  value={`м. ${SITE_CONFIG.address.city}, ${SITE_CONFIG.address.district}\n${SITE_CONFIG.address.street}`}
                   href={`https://www.google.com/maps/search/?api=1&query=${SITE_CONFIG.geo.lat},${SITE_CONFIG.geo.lng}`}
                 />
                 <ContactCard

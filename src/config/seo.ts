@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   phone: "073 222 69 68",
   phoneHref: "tel:+380732226968",
   address: {
-    street: "вул. Лугова 15т",
+    street: "вул. Лугова 15",
     city: "Київ",
     district: "Оболонь",
     postalCode: "04214",
