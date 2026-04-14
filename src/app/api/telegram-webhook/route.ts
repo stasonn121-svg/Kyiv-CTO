@@ -5,8 +5,15 @@ import { CATEGORIES } from "@/lib/portfolio";
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const WEBHOOK_SECRET = process.env.TELEGRAM_WEBHOOK_SECRET;
 
-// Store selected category per user (in-memory, resets on deploy)
+// In-memory state (resets on deploy)
 const userCategory = new Map<number, string>();
+const chatMessages = new Map<number, number[]>(); // chatId → message IDs
+
+function trackMessage(chatId: number, messageId: number) {
+  const ids = chatMessages.get(chatId) ?? [];
+  ids.push(messageId);
+  chatMessages.set(chatId, ids);
+}
 
 const CATEGORY_LABELS: Record<string, string> = {
   engine: "Двигун",
@@ -68,6 +75,9 @@ export async function POST(request: NextRequest) {
   const message = update.message;
   if (!message) return NextResponse.json({ ok: true });
 
+  // Track user messages for cleanup
+  trackMessage(message.chat.id, message.message_id);
+
   // Handle /start command
   if (message.text === "/start") {
     await sendMainMenu(message.chat.id);
@@ -91,6 +101,7 @@ async function sendMainMenu(chatId: number) {
       inline_keyboard: [
         [{ text: "📸 Завантажити фото", callback_data: "upload" }],
         [{ text: "🗑 Видалити фото", callback_data: "delete" }],
+        [{ text: "🧹 Очистити чат", callback_data: "clear" }],
       ],
     },
   });
@@ -102,6 +113,25 @@ async function handleCallback(callback: TelegramCallbackQuery) {
 
   // Acknowledge button press
   await telegramRequest("answerCallbackQuery", { callback_query_id: callback.id });
+
+  // Clear chat
+  if (callback.data === "clear") {
+    const ids = chatMessages.get(chatId) ?? [];
+
+    // Delete all tracked messages
+    for (const msgId of ids) {
+      await telegramRequest("deleteMessage", {
+        chat_id: chatId,
+        message_id: msgId,
+      });
+    }
+
+    chatMessages.set(chatId, []);
+
+    // Send fresh menu
+    await sendMainMenu(chatId);
+    return;
+  }
 
   if (callback.data === "upload") {
     // Show category selection
@@ -286,9 +316,20 @@ async function handlePhoto(message: TelegramMessage) {
 }
 
 async function telegramRequest(method: string, body: Record<string, unknown>) {
-  await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/${method}`, {
+  const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/${method}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
+
+  // Track bot messages for cleanup
+  const chatId = body.chat_id as number | undefined;
+  if (chatId && (method === "sendMessage" || method === "sendPhoto")) {
+    try {
+      const data = await res.json();
+      if (data.ok && data.result?.message_id) {
+        trackMessage(chatId, data.result.message_id);
+      }
+    } catch { /* ignore */ }
+  }
 }
