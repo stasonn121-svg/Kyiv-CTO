@@ -16,7 +16,8 @@ export const SITE_CONFIG = {
   },
   hours: "ПН — СБ / 09:00 — 18:00",
   instagram: "https://www.instagram.com/avtoservis_garage_cto",
-  geo: { lat: 50.5077, lng: 30.4983 },
+  geo: { lat: 50.5072997, lng: 30.4770974 },
+  googleMapsUrl: "https://maps.app.goo.gl/QqFfFmVHMdaaJkxk9",
 } as const;
 
 export type PageKey = "home" | "portfolio" | "contacts" | "pricing" | "reviews";

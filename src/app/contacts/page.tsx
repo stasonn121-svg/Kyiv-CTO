@@ -14,7 +14,7 @@ export default function ContactsPage() {
       <section className="relative w-full h-[500px] lg:h-[614px] overflow-hidden bg-surface-container-low pt-20">
         <div className="absolute inset-0 z-0">
           <iframe
-            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2538.5!2d${SITE_CONFIG.geo.lng}!3d${SITE_CONFIG.geo.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDMwJzI3LjciTiAzMMKwMjknNTMuOSJF!5e0!3m2!1suk!2sua!4v1`}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500!2d30.4770974!3d50.5072997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d3e6bda77e5d%3A0xb09788540a23e4aa!2z0KHQotCeICws0JPQkNCg0JDQliws!5e0!3m2!1suk!2sua!4v1"
             className="w-full h-full border-0 grayscale opacity-60"
             allowFullScreen
             loading="lazy"
@@ -58,7 +58,7 @@ export default function ContactsPage() {
                   icon={<LocationIcon />}
                   label="Адреса"
                   value={`м. ${SITE_CONFIG.address.city}, ${SITE_CONFIG.address.district}\n${SITE_CONFIG.address.street}`}
-                  href={`https://www.google.com/maps/search/?api=1&query=${SITE_CONFIG.geo.lat},${SITE_CONFIG.geo.lng}`}
+                  href={SITE_CONFIG.googleMapsUrl}
                 />
                 <ContactCard
                   icon={<ClockIcon />}
