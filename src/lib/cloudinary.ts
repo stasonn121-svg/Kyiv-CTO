@@ -26,6 +26,16 @@ export async function uploadToCloudinary(
   return result.secure_url;
 }
 
+export async function deleteFromCloudinary(publicId: string): Promise<boolean> {
+  try {
+    const result = await cloudinary.uploader.destroy(publicId);
+    return result.result === "ok";
+  } catch (error) {
+    console.error("[Cloudinary] Delete error:", error);
+    return false;
+  }
+}
+
 export async function getPortfolioImages(
   category?: string
 ): Promise<PortfolioImage[]> {
@@ -50,6 +60,7 @@ export async function getPortfolioImages(
       const context = r.context as Record<string, Record<string, string>> | undefined;
 
       return {
+        publicId: publicId,
         url: (r.secure_url as string).replace(
           "/upload/",
           "/upload/c_fill,w_800,h_600,q_auto,f_auto/"

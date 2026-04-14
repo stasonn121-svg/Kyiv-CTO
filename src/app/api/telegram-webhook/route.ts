@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { uploadToCloudinary } from "@/lib/cloudinary";
+import { uploadToCloudinary, getPortfolioImages, deleteFromCloudinary } from "@/lib/cloudinary";
 import { CATEGORIES } from "@/lib/portfolio";
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -86,10 +86,11 @@ export async function POST(request: NextRequest) {
 async function sendMainMenu(chatId: number) {
   await telegramRequest("sendMessage", {
     chat_id: chatId,
-    text: "👋 Вітаю! Я бот Auto Service Garage.\n\nНатисніть кнопку нижче, щоб завантажити фото до портфоліо.",
+    text: "👋 Вітаю! Я бот Auto Service Garage.\n\nОберіть дію:",
     reply_markup: {
       inline_keyboard: [
         [{ text: "📸 Завантажити фото", callback_data: "upload" }],
+        [{ text: "🗑 Видалити фото", callback_data: "delete" }],
       ],
     },
   });
@@ -126,6 +127,87 @@ async function handleCallback(callback: TelegramCallbackQuery) {
       text: `✅ Категорія: **${label}**\n\n📸 Тепер надішліть фото.\nМожете додати підпис до фото (необов'язково).`,
       parse_mode: "Markdown",
     });
+    return;
+  }
+
+  // Show delete: select category
+  if (callback.data === "delete") {
+    const buttons = Object.entries(CATEGORY_LABELS).map(([slug, label]) => ([
+      { text: label, callback_data: `delcat:${slug}` },
+    ]));
+
+    await telegramRequest("sendMessage", {
+      chat_id: chatId,
+      text: "🗑 Оберіть категорію для видалення фото:",
+      reply_markup: { inline_keyboard: buttons },
+    });
+    return;
+  }
+
+  // Show photos in category for deletion
+  if (callback.data?.startsWith("delcat:")) {
+    const category = callback.data.replace("delcat:", "");
+    const label = CATEGORY_LABELS[category] ?? category;
+
+    try {
+      const images = await getPortfolioImages(category);
+
+      if (images.length === 0) {
+        await telegramRequest("sendMessage", {
+          chat_id: chatId,
+          text: `📁 Категорія "${label}" порожня.`,
+          reply_markup: {
+            inline_keyboard: [[{ text: "◀️ Назад", callback_data: "delete" }]],
+          },
+        });
+        return;
+      }
+
+      for (const img of images) {
+        await telegramRequest("sendPhoto", {
+          chat_id: chatId,
+          photo: img.url,
+          caption: `📝 ${img.caption || "—"}\n📁 ${label}`,
+          reply_markup: {
+            inline_keyboard: [
+              [{ text: "🗑 Видалити це фото", callback_data: `rm:${img.publicId}` }],
+            ],
+          },
+        });
+      }
+    } catch (error) {
+      console.error("[Webhook] List error:", error);
+      await telegramRequest("sendMessage", {
+        chat_id: chatId,
+        text: "❌ Помилка при завантаженні списку фото.",
+      });
+    }
+    return;
+  }
+
+  // Delete specific photo
+  if (callback.data?.startsWith("rm:")) {
+    const publicId = callback.data.replace("rm:", "");
+
+    const deleted = await deleteFromCloudinary(publicId);
+
+    if (deleted) {
+      await telegramRequest("sendMessage", {
+        chat_id: chatId,
+        text: "✅ Фото видалено з портфоліо.",
+        reply_markup: {
+          inline_keyboard: [
+            [{ text: "🗑 Видалити ще", callback_data: "delete" }],
+            [{ text: "📸 Завантажити фото", callback_data: "upload" }],
+          ],
+        },
+      });
+    } else {
+      await telegramRequest("sendMessage", {
+        chat_id: chatId,
+        text: "❌ Не вдалося видалити фото.",
+      });
+    }
     return;
   }
 }
