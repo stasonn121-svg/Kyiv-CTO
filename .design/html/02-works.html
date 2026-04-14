@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#fde403",
+              "on-secondary-fixed": "#004145",
+              "on-primary-fixed-variant": "#675c00",
+              "inverse-primary": "#6b6000",
+              "tertiary": "#ff7168",
+              "secondary-container": "#00696f",
+              "surface-container-high": "#201f21",
+              "secondary-fixed": "#00f1fe",
+              "error": "#ff7351",
+              "primary-fixed": "#fde403",
+              "surface-variant": "#262627",
+              "tertiary-fixed": "#ff9289",
+              "tertiary-container": "#f53335",
+              "primary-dim": "#edd600",
+              "on-tertiary-container": "#000000",
+              "inverse-surface": "#fcf8f9",
+              "surface-container-highest": "#262627",
+              "surface-container-lowest": "#000000",
+              "on-tertiary": "#4a0004",
+              "on-tertiary-fixed-variant": "#7a000b",
+              "primary": "#fff2a8",
+              "error-container": "#b92902",
+              "surface-tint": "#fff2a8",
+              "outline": "#767576",
+              "surface-bright": "#2c2c2d",
+              "tertiary-fixed-dim": "#ff7b71",
+              "on-primary-fixed": "#484000",
+              "on-error-container": "#ffd2c8",
+              "surface-container-low": "#131314",
+              "background": "#0e0e0f",
+              "inverse-on-surface": "#565556",
+              "on-surface": "#ffffff",
+              "on-primary-container": "#5c5200",
+              "surface": "#0e0e0f",
+              "outline-variant": "#484849",
+              "surface-container": "#1a191b",
+              "secondary-fixed-dim": "#00e2ee",
+              "secondary-dim": "#00e2ee",
+              "on-error": "#450900",
+              "on-secondary": "#00555a",
+              "surface-dim": "#0e0e0f",
+              "on-secondary-fixed-variant": "#006065",
+              "primary-fixed-dim": "#edd600",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#e2242a",
+              "secondary": "#00f1fe",
+              "on-surface-variant": "#adaaab",
+              "error-dim": "#d53d18",
+              "on-primary": "#655b00",
+              "on-tertiary-fixed": "#3a0002"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(26, 25, 27, 0.6);
+            backdrop-filter: blur(12px);
+        }
+        .technical-grid {
+            background-image: radial-gradient(circle, rgba(72, 72, 73, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0f]/60 backdrop-blur-xl border-b border-[#484849]/20 shadow-[0_8px_32px_rgba(0,241,254,0.04)] flex justify-between items-center px-10 py-4 max-w-full">
+<div class="flex items-center gap-4">
+<img alt="Kyiv Dynamics Logo" class="h-12 w-auto invert" src="https://lh3.googleusercontent.com/aida/ADBb0uhpEGeJEawjQOfhKkymrBEiGcAT2G1s37L6fGtS12m_yt-WeeSMEjR41WyF_JbDnH-viiNcyQI4cHX1AQfaxKPM4bFyu77kGB2r20wWXieqyyarQSiH8kFslkiKIA2UZcjjmbvVJE4Fd41KNRwJhHgy5kvCWRB_ffGTniWylQSxIx08Smm2DS4wFjdfznQgnXupR7Y4PrINjOxqryhgOgdgfXgvl01IvYoyzQ_M_6y61uVH-pNY9WN9R6H7mIB05-AUf2Y9nS0hSw"/>
+<div class="text-2xl font-black text-[#fde403] tracking-tight font-['Space_Grotesk']">KYIV DYNAMICS</div>
+</div>
+<div class="hidden md:flex gap-10 font-['Space_Grotesk'] uppercase font-bold tracking-tighter">
+<a class="text-white/60 hover:text-white transition-colors duration-200 ease-in-out" href="#">Ціни</a>
+<a class="text-[#fde403] border-b-2 border-[#fde403] pb-1 duration-200 ease-in-out" href="#">Портфоліо</a>
+<a class="text-white/60 hover:text-white transition-colors duration-200 ease-in-out" href="#">Відгуки</a>
+<a class="text-white/60 hover:text-white transition-colors duration-200 ease-in-out" href="#">Контакти</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-none font-label font-bold uppercase tracking-widest text-sm hover:bg-primary-dim transition-colors">
+            ЗАМОВИТИ СЕРВІС
+        </button>
+</nav>
+<main class="pt-32 pb-20 px-6 md:px-10 technical-grid">
+<!-- Hero Section -->
+<header class="mb-20 max-w-4xl">
+<div class="flex items-center gap-4 mb-4">
+<span class="h-[1px] w-12 bg-secondary shadow-[0_0_8px_#00f1fe]"></span>
+<span class="font-label text-secondary text-xs tracking-[0.3em] uppercase">Архів / Операції</span>
+</div>
+<h1 class="font-headline text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-6">
+                ІНЖЕНЕРНА <br/> <span class="text-primary-container">ТОЧНІСТЬ.</span>
+</h1>
+<p class="font-body text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                Ознайомтеся з нашими звітами про діагностику та реставрацію. Від капітального ремонту трансмісії до калібрування електроніки — ми ставимося до кожного шасі як до шедевра кінетичного мистецтва.
+            </p>
+</header>
+<!-- Portfolio Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Featured Case: Porsche -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low border border-outline-variant/20">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Close-up of a dark metallic Porsche 911 engine bay with neon cyan workshop lighting and technical details visible" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfObcXx8lZFdPqKME4LmtlHmp6bsgrxWj7gMrYByQlBf02FHbNtFSRRAOY5AQXKklkdONJETAh5OpeJeJESC6hr7MErQa8bSoQ5Ky78zPV9mZtrnX0ogRpfB5ZJDLveNtk1jSzNq7zrr2gsVqNygEnlVs5lTnUfB6ptzZEccEWP1xfDFMvxi_T13pxT_KsqPcEfVxSmMNEQdSsBkwxhbWlNsACOK5ypF-bJITLaeWTBMsRUL8yPYu-ZTNQYeR_Qw-ku5cVgh6gIuE"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="flex justify-between items-end">
+<div>
+<span class="font-label text-primary-container text-[10px] tracking-widest uppercase mb-2 block">Журнал справи: KD-911-GT3</span>
+<h3 class="font-headline text-3xl font-bold uppercase tracking-tight text-white mb-4">Porsche 911 GT3 RS</h3>
+<div class="flex gap-8 border-l border-primary-container/30 pl-6">
+<div>
+<p class="font-label text-white/40 text-[10px] uppercase mb-1 tracking-widest">Діагноз</p>
+<p class="font-body text-sm font-medium">Збій КПП при високому крутному моменті</p>
+</div>
+<div>
+<p class="font-label text-white/40 text-[10px] uppercase mb-1 tracking-widest">Результат</p>
+<p class="font-body text-sm font-medium text-secondary">Повна реставрація та рекалібрування PDK</p>
+</div>
+</div>
+</div>
+<button class="bg-white/5 backdrop-blur-md border border-white/10 p-4 hover:bg-primary-container hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">north_east</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Stats Module -->
+<div class="md:col-span-4 bg-surface-container flex flex-col justify-center p-8 border border-outline-variant/20 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-white/10 text-6xl" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div class="relative z-10">
+<p class="font-label text-secondary text-xs uppercase tracking-widest mb-10">Показники потужності</p>
+<div class="space-y-8">
+<div>
+<p class="text-4xl font-headline font-black text-white">482+</p>
+<p class="font-label text-white/40 text-[10px] uppercase tracking-widest">Успішних калібрувань</p>
+</div>
+<div>
+<p class="text-4xl font-headline font-black text-white">100%</p>
+<p class="font-label text-white/40 text-[10px] uppercase tracking-widest">Цілісність оригінальних запчастин</p>
+</div>
+<div>
+<p class="text-4xl font-headline font-black text-secondary">0.02мм</p>
+<p class="font-label text-white/40 text-[10px] uppercase tracking-widest">Точність допусків</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Case 2: BMW -->
+<div class="md:col-span-4 group bg-surface-container-low border border-outline-variant/20 overflow-hidden">
+<div class="aspect-square overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-110" data-alt="Matte black BMW M5 in a dimly lit industrial hangar with sharp yellow accent lights highlighting the body lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1vLPkLDU6ucx6Fa85_YwC5gU-fGVcRhLVv5ldRrRSn6ZQe6vnaFh_mgCCxI7pxA6dxI-AB4E1wKm9AdruiObD7GT9IFN5bdZ4oXd--1EdxaujvsYOxdcCf-JG3lXzBr78-SvAbp5MmDFP0EyIJMy1MHhVmcRdir7Y_eQET5Yh8EO6pcdNvXE95CisS4hLwEuoN16reEl-R1Y3rBCajoMJxp9n9VdQbVaCRRNDxhCsp5T1ZHeN1wSw6EtkoWhyAHvGUk_FeMDX58g"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur px-3 py-1 font-label text-[10px] uppercase tracking-widest border border-outline-variant/20">
+                        BMW M5 COMPETITION
+                    </div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<p class="font-label text-white/40 text-[9px] uppercase tracking-[0.2em] mb-1">Звіт про діагностику</p>
+<p class="font-body text-sm text-on-surface">Десинхронізація запалювання та проблеми з турболагом.</p>
+</div>
+<div class="pt-4 border-t border-outline-variant/10">
+<p class="font-label text-primary-container text-[9px] uppercase tracking-[0.2em] mb-1">Виконання</p>
+<p class="font-body text-sm text-on-surface">Оптимізація Stage 2 та модернізація охолодження Stage 3.</p>
+</div>
+</div>
+</div>
+<!-- Case 3: Audi -->
+<div class="md:col-span-4 group bg-surface-container-low border border-outline-variant/20 overflow-hidden">
+<div class="aspect-square overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-transform duration-500 group-hover:scale-110" data-alt="Audi R8 performance car wheels and carbon ceramic brakes detail in a technical studio setting with orange lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_T_G22J14hHp3_ZL6YqeVwBrJttACkp0PhTZdcL8rU9UUvRWz3b_RZqXFujKQ1tb3wZmKRgA1QCFPbUhm0cFcveLwtxQ01tU4AdN1G2eDCxh99IesKv9dYaCv9I5DmX9rQejt4J2q63gngGvOa2LcYNR-Kyqqjp0quta7crTvCpFpJllrc-m6un4zI2XF8ZTtuoduugsKS6xcGfJ6D8YIp0hoGVQvHssTlkAN9YjlRZ8qd-uAhAO4bhgrO2M2tmvLIREgyEjIjcQ"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur px-3 py-1 font-label text-[10px] uppercase tracking-widest border border-outline-variant/20">
+                        AUDI RS6 AVANT
+                    </div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<p class="font-label text-white/40 text-[9px] uppercase tracking-[0.2em] mb-1">Звіт про діагностику</p>
+<p class="font-body text-sm text-on-surface">Витік повітря в підвісці та вібрація шасі.</p>
+</div>
+<div class="pt-4 border-t border-outline-variant/10">
+<p class="font-label text-primary-container text-[9px] uppercase tracking-[0.2em] mb-1">Виконання</p>
+<p class="font-body text-sm text-on-surface">Капітальний ремонт пневматичної системи та розвал-сходження.</p>
+</div>
+</div>
+</div>
+<!-- Performance Chart Component -->
+<div class="md:col-span-4 bg-surface-container p-8 border border-outline-variant/20 flex flex-col justify-between">
+<div>
+<h4 class="font-headline text-xl font-bold uppercase tracking-tight mb-2">Технічне Ядро</h4>
+<p class="font-body text-xs text-on-surface-variant mb-6">Діагностичні метрики в реальному часі з нашого головного стенду.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="w-2 h-2 bg-secondary rounded-full shadow-[0_0_8px_#00f1fe]"></span>
+<div class="flex-1">
+<div class="flex justify-between font-label text-[10px] uppercase mb-1">
+<span>Налаштування двигуна</span>
+<span>98%</span>
+</div>
+<div class="w-full h-[2px] bg-outline-variant/20">
+<div class="h-full bg-secondary w-[98%]"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-2 h-2 bg-primary-container rounded-full shadow-[0_0_8px_#fde403]"></span>
+<div class="flex-1">
+<div class="flex justify-between font-label text-[10px] uppercase mb-1">
+<span>Трансмісія</span>
+<span>92%</span>
+</div>
+<div class="w-full h-[2px] bg-outline-variant/20">
+<div class="h-full bg-primary-container w-[92%]"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-2 h-2 bg-white rounded-full"></span>
+<div class="flex-1">
+<div class="flex justify-between font-label text-[10px] uppercase mb-1">
+<span>Електроніка</span>
+<span>100%</span>
+</div>
+<div class="w-full h-[2px] bg-outline-variant/20">
+<div class="h-full bg-white w-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 flex justify-end">
+<span class="font-label text-[9px] text-white/20 tracking-widest">ВЕРСІЯ_СИСТЕМИ_4.2.0</span>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<section class="mt-24 bg-surface-container-high p-12 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="Abstract view of technical blueprint lines and industrial machinery parts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD38xi6M24Wqine1UMh2hY4VcBAh6R-A4U0ijoP6i-eCxlmpWodBUCJ1rp6drMVTmecerGCMSb0jhC4cTs4vAc-qhqRq7BMl7q0XMOJdBIWpDybwRdWgsslb4zpKkN3bmRkuoveECiSgRY_c3XNrtzCTnIp_Q8RFT-ceckV_g0SaUYxy4OrrVwpdiG1tZhT8xk-l4-15V56QcuArdQ3oILl_KOSxz41kHBjW28DvbxG4u4PufSWx1WTSFVHNHfe5WUfQZQqpCbk9HQ"/>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-10">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl font-black uppercase mb-4 tracking-tighter">Ваша машина <br/> заслуговує на <span class="text-secondary">Майстерність.</span></h2>
+<p class="font-body text-on-surface-variant">Заплануйте комплексну діагностику вашого високопродуктивного автомобіля. Наші інженери готові.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-8 py-4 bg-primary-container text-on-primary font-label font-black uppercase tracking-widest text-sm hover:scale-105 transition-transform">
+                        ОФОРМИТИ_ЗАПИТ
+                    </button>
+<button class="px-8 py-4 border border-secondary text-secondary font-label font-black uppercase tracking-widest text-sm hover:bg-secondary/10 transition-colors">
+                        ПЕРЕГЛЯНУТИ_ЦІНИ
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0f] border-t border-[#484849]/20 flex flex-col md:flex-row justify-between items-center px-10 py-12 gap-6 w-full rounded-none">
+<div class="text-[#fde403] font-bold font-['Manrope'] text-xs tracking-widest uppercase">
+            © 2024 KYIV DYNAMICS. ІНЖЕНЕРНА ТОЧНІСТЬ.
+        </div>
+<div class="flex flex-wrap justify-center gap-8 font-['Manrope'] text-xs tracking-widest uppercase text-white/40">
+<a class="hover:text-[#00f1fe] transition-colors" href="#">Умови надання послуг</a>
+<a class="hover:text-[#00f1fe] transition-colors" href="#">Політика конфіденційності</a>
+<a class="hover:text-[#00f1fe] transition-colors" href="#">Протоколи діагностики</a>
+<a class="hover:text-[#00f1fe] transition-colors" href="#">Підтримка автопарку</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white/40 hover:text-primary-container cursor-pointer transition-colors" data-icon="terminal">terminal</span>
+<span class="material-symbols-outlined text-white/40 hover:text-primary-container cursor-pointer transition-colors" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+</footer>
+</body></html>

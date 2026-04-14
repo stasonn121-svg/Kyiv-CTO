@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#fde403",
+              "on-secondary-fixed": "#004145",
+              "on-primary-fixed-variant": "#675c00",
+              "inverse-primary": "#6b6000",
+              "tertiary": "#ff7168",
+              "secondary-container": "#00696f",
+              "surface-container-high": "#201f21",
+              "secondary-fixed": "#00f1fe",
+              "error": "#ff7351",
+              "primary-fixed": "#fde403",
+              "surface-variant": "#262627",
+              "tertiary-fixed": "#ff9289",
+              "tertiary-container": "#f53335",
+              "primary-dim": "#edd600",
+              "on-tertiary-container": "#000000",
+              "inverse-surface": "#fcf8f9",
+              "surface-container-highest": "#262627",
+              "surface-container-lowest": "#000000",
+              "on-tertiary": "#4a0004",
+              "on-tertiary-fixed-variant": "#7a000b",
+              "primary": "#fff2a8",
+              "error-container": "#b92902",
+              "surface-tint": "#fff2a8",
+              "outline": "#767576",
+              "surface-bright": "#2c2c2d",
+              "tertiary-fixed-dim": "#ff7b71",
+              "on-primary-fixed": "#484000",
+              "on-error-container": "#ffd2c8",
+              "surface-container-low": "#131314",
+              "background": "#0e0e0f",
+              "inverse-on-surface": "#565556",
+              "on-secondary-container": "#e2fdff",
+              "on-surface": "#ffffff",
+              "on-primary-container": "#5c5200",
+              "surface": "#0e0e0f",
+              "outline-variant": "#484849",
+              "surface-container": "#1a191b",
+              "secondary-fixed-dim": "#00e2ee",
+              "secondary-dim": "#00e2ee",
+              "on-error": "#450900",
+              "on-secondary": "#00555a",
+              "surface-dim": "#0e0e0f",
+              "on-secondary-fixed-variant": "#006065",
+              "primary-fixed-dim": "#edd600",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#e2242a",
+              "secondary": "#00f1fe",
+              "on-surface-variant": "#adaaab",
+              "error-dim": "#d53d18",
+              "on-primary": "#655b00",
+              "on-tertiary-fixed": "#3a0002"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hud-grid {
+            background-image: radial-gradient(circle, #484849 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.05;
+        }
+        .glass-panel {
+            background: rgba(26, 25, 27, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0f]/60 backdrop-blur-xl border-b border-[#484849]/20 flex justify-between items-center px-10 py-4 max-w-full font-['Space_Grotesk'] uppercase font-bold tracking-tighter shadow-[0_8px_32px_rgba(0,241,254,0.04)]">
+<div class="flex items-center gap-3">
+<img alt="KYIV DYNAMICS Logo" class="h-10 w-10 object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida/ADBb0uhpEGeJEawjQOfhKkymrBEiGcAT2G1s37L6fGtS12m_yt-WeeSMEjR41WyF_JbDnH-viiNcyQI4cHX1AQfaxKPM4bFyu77kGB2r20wWXieqyyarQSiH8kFslkiKIA2UZcjjmbvVJE4Fd41KNRwJhHgy5kvCWRB_ffGTniWylQSxIx08Smm2DS4wFjdfznQgnXupR7Y4PrINjOxqryhgOgdgfXgvl01IvYoyzQ_M_6y61uVH-pNY9WN9R6H7mIB05-AUf2Y9nS0hSw"/>
+<div class="text-2xl font-black text-[#fde403] tracking-tight">KYIV DYNAMICS</div>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-white/60 hover:text-white transition-colors duration-200 ease-in-out" href="#">Ціни</a>
+<a class="text-white/60 hover:text-white transition-colors duration-200 ease-in-out" href="#">Портфоліо</a>
+<a class="text-white/60 hover:text-white transition-colors duration-200 ease-in-out" href="#">Відгуки</a>
+<a class="text-[#fde403] border-b-2 border-[#fde403] pb-1 duration-200 ease-in-out" href="#">Контакти</a>
+</div>
+<button class="bg-[#fde403] text-[#655b00] px-6 py-2 text-sm font-black hover:bg-primary-dim transition-all duration-200">ЗАПИСАТИСЯ</button>
+</nav>
+<main class="pt-24 min-h-screen">
+<!-- Hero Section / Map -->
+<section class="relative w-full h-[614px] overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 grayscale contrast-125" data-alt="стилізована темна технічна карта вулиць Києва з неоновими блакитними акцентами та індустріальною естетикою" data-location="Kyiv" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxOGywcpaRgBpYWgzE3LnTmYF7kd5Yn0MbrkLCXbUine2WvrwM3Rv-nlw-1mq501cLOWm3IgNkF97guQaVhk-JfDNNIo7IB3hd-dFxarI9W2z2wReyczEf3D0Cq9LV9DX7HFv3rfCU2npow4cqDKVAADATfacGrpw97vkVmlrshqMJ8Jnop6Ji9oQLGRZitGBUaXpi3LVeli6xpxzTMzaHAX94znOzEndLoM8KrNOZndLGBr1K8NycXTCTlJqdcBPTiMe-2GKMEi8"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
+<div class="absolute inset-0 hud-grid"></div>
+</div>
+<div class="relative z-10 container mx-auto px-10 h-full flex flex-col justify-end pb-16">
+<div class="max-w-2xl">
+<span class="font-label text-secondary text-xs tracking-[0.3em] uppercase mb-4 block">Об'єкт: Штаб-квартира Київ</span>
+<h1 class="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none mb-6">КРЕМЕНЬ СТО</h1>
+<p class="text-on-surface-variant font-light text-lg max-w-lg leading-relaxed">
+                        Високоточна автомобільна діагностика та інжиніринг у центрі столиці. Професійний тюнінг для автомобілів преміум-класу.
+                    </p>
+</div>
+</div>
+<!-- Floating Data HUD Component -->
+<div class="absolute top-10 right-10 z-20 hidden lg:block">
+<div class="glass-panel border border-outline-variant/20 p-4 font-label text-[10px] tracking-widest text-secondary space-y-2">
+<div class="flex justify-between gap-12"><span>ШИР:</span> <span>50.4501° N</span></div>
+<div class="flex justify-between gap-12"><span>ДОВГ:</span> <span>30.5234° E</span></div>
+<div class="flex justify-between gap-12"><span>СЕКТОР:</span> <span>ПОДІЛЬСЬКИЙ_Р-Н</span></div>
+<div class="h-[1px] bg-secondary/20 w-full"></div>
+<div class="flex justify-between gap-12"><span>СТАТУС:</span> <span class="animate-pulse">АКТИВНО</span></div>
+</div>
+</div>
+</section>
+<!-- Main Content: Form & Info -->
+<section class="container mx-auto px-10 py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left: Contact Details -->
+<div class="lg:col-span-5 space-y-12">
+<div class="space-y-8">
+<h2 class="font-headline text-3xl font-bold tracking-tight uppercase border-l-4 border-primary-container pl-6">Прямий зв'язок</h2>
+<!-- Contact Cards -->
+<div class="grid gap-4">
+<!-- Card 1 -->
+<div class="group bg-surface-container-low p-6 transition-all duration-200 hover:bg-surface-container border border-transparent hover:border-secondary/30">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-2xl">call</span>
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Гаряча лінія та Запис</p>
+<p class="font-headline text-xl font-bold">+38 (044) 221-55-99</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-low p-6 transition-all duration-200 hover:bg-surface-container border border-transparent hover:border-secondary/30">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-2xl">location_on</span>
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Адреса об'єкта</p>
+<p class="font-headline text-xl font-bold">Вул. Новокостянтинівська, 8<br/>Київ, 04080</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-low p-6 transition-all duration-200 hover:bg-surface-container border border-transparent hover:border-secondary/30">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-2xl">schedule</span>
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Графік роботи</p>
+<p class="font-headline text-xl font-bold">ПН — СБ / 08:00 — 20:00</p>
+<p class="text-tertiary text-xs font-bold mt-1 uppercase">Неділя: Тільки термінові виклики</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Links -->
+<div class="space-y-4">
+<h3 class="font-label text-[10px] text-on-surface-variant uppercase tracking-[0.4em]">Стежити за логістикою</h3>
+<div class="flex gap-4">
+<a class="w-12 h-12 bg-surface-container flex items-center justify-center hover:bg-secondary hover:text-on-secondary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-12 h-12 bg-surface-container flex items-center justify-center hover:bg-secondary hover:text-on-secondary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">videocam</span>
+</a>
+<a class="w-12 h-12 bg-surface-container flex items-center justify-center hover:bg-secondary hover:text-on-secondary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">photo_camera</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Right: Booking Form -->
+<div class="lg:col-span-7 bg-surface-container p-10 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline text-3xl font-black uppercase mb-2">Запит на діагностику</h2>
+<p class="font-body text-on-surface-variant text-sm mb-10">Усі поля є обов'язковими для технічної оцінки.</p>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Дані техніка (Ім'я)</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant focus:border-secondary focus:ring-0 transition-colors py-3 px-4 outline-none text-on-surface" placeholder="ІВАН ПЕТРОВ" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Лінія зв'язку (Телефон)</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant focus:border-secondary focus:ring-0 transition-colors py-3 px-4 outline-none text-on-surface" placeholder="+380 ---------" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Архітектура ТЗ (Модель авто / Рік)</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant focus:border-secondary focus:ring-0 transition-colors py-3 px-4 outline-none text-on-surface" placeholder="BMW M5 COMPETITION 2023" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Лог помилок / Повідомлення</label>
+<textarea class="w-full bg-surface-container-low border-b border-outline-variant focus:border-secondary focus:ring-0 transition-colors py-3 px-4 outline-none text-on-surface" placeholder="ОПИШІТЬ АНОМАЛІЇ В РОБОТІ..." rows="4"></textarea>
+</div>
+<div class="pt-6">
+<button class="w-full bg-primary-container text-on-primary font-headline font-black py-5 tracking-widest uppercase hover:bg-primary-dim transition-all shadow-[0_4px_20px_rgba(253,228,3,0.2)] flex items-center justify-center gap-4" type="submit">
+                                    Ініціалізувати протокол
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0f] border-t border-[#484849]/20 w-full rounded-none font-['Manrope'] text-xs tracking-widest uppercase flex flex-col md:flex-row justify-between items-center px-10 py-12 gap-6">
+<div class="text-[#fde403] font-bold">© 2024 KYIV DYNAMICS. ІНЖЕНЕРНА ТОЧНІСТЬ.</div>
+<div class="flex gap-8 flex-wrap justify-center">
+<a class="text-white/40 hover:text-[#00f1fe] transition-colors" href="#">Умови надання послуг</a>
+<a class="text-white/40 hover:text-[#00f1fe] transition-colors" href="#">Політика конфіденційності</a>
+<a class="text-white/40 hover:text-[#00f1fe] transition-colors" href="#">Діагностичні протоколи</a>
+<a class="text-white/40 hover:text-[#00f1fe] transition-colors" href="#">Корпоративна підтримка</a>
+</div>
+</footer>
+</body></html>
