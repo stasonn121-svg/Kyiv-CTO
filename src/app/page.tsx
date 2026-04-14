@@ -8,6 +8,8 @@ import AboutSection from "@/components/sections/AboutSection";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import CTASection from "@/components/sections/CTASection";
 
+export const revalidate = 60;
+
 export const metadata = {
   title: PAGE_SEO.home.title,
   description: PAGE_SEO.home.description,

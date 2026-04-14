@@ -1,14 +1,15 @@
 import Link from "next/link";
+import { getPricing } from "@/lib/pricing";
 
-const PRICES = [
-  { name: "Комп'ютерна діагностика", sub: "Повне сканування + звіт помилок", price: "від 500 ₴" },
-  { name: "Заміна мастила та фільтрів", sub: "Перевірка рідин за 12 пунктами", price: "від 800 ₴" },
-  { name: "Ремонт ходової (робота)", sub: "Підвіска, рульове, розвал-сходження", price: "від 1 200 ₴" },
-  { name: "Обслуговування гальм", sub: "Колодки, диски, перевірка ABS", price: "від 1 000 ₴" },
-  { name: "Діагностика електрики", sub: "Генератор, стартер, проводка", price: "від 600 ₴" },
-];
+export default async function PricingSection() {
+  const pricing = await getPricing();
 
-export default function PricingSection() {
+  // Show first 5 items across all sections for the homepage preview
+  const allItems = pricing.sections.flatMap((s) =>
+    s.items.map((item) => ({ ...item, section: s.title }))
+  );
+  const preview = allItems.slice(0, 5);
+
   return (
     <section className="py-24 bg-surface-container-low border-y border-white/5">
       <div className="container mx-auto px-6 lg:px-10">
@@ -20,7 +21,7 @@ export default function PricingSection() {
             <div className="flex-grow h-px bg-outline-variant/30" />
           </div>
           <div className="space-y-4">
-            {PRICES.map((item) => (
+            {preview.map((item) => (
               <div
                 key={item.name}
                 className="flex justify-between items-center p-6 bg-surface-container hover:bg-surface-bright transition-colors group"
@@ -30,7 +31,7 @@ export default function PricingSection() {
                     {item.name}
                   </span>
                   <span className="text-[10px] font-headline text-white/30 uppercase tracking-widest">
-                    {item.sub}
+                    {item.section}
                   </span>
                 </div>
                 <div className="font-headline text-secondary text-xl font-bold whitespace-nowrap ml-4">
