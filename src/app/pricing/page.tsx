@@ -20,10 +20,10 @@ export default async function PricingPage() {
         <div className="container mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-outline-variant/20 pb-10">
           <div className="max-w-2xl">
             <span className="font-headline text-secondary text-sm tracking-[0.3em] uppercase mb-4 block">
-              Інженерна точність
+              СТО Garage / Оболонь
             </span>
             <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
-              Протоколи <span className="text-primary-container">обслуговування</span>
+              Ціни на <span className="text-primary-container">ремонт авто</span>
             </h1>
           </div>
           <p className="text-white/60 max-w-xs text-sm">

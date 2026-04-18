@@ -44,13 +44,13 @@ export default function ReviewsPage() {
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-6 lg:px-10">
           <span className="font-headline text-secondary text-xs tracking-[0.3em] uppercase mb-4 block">
-            Технологічна довіра / 5.0
+            Рейтинг 5.0 / Оболонь, Київ
           </span>
           <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-[0.9] mb-6">
-            Дані <span className="text-primary-container">клієнтів</span>
+            Відгуки <span className="text-primary-container">клієнтів</span>
           </h1>
           <p className="text-on-surface-variant text-lg max-w-xl">
-            Показники продуктивності вимірюються не задоволенням — це найвищий критерій. Реальні відгуки від реальних клієнтів.
+            Реальні відгуки власників авто про ремонт та обслуговування на СТО Garage. Нам довіряють сотні клієнтів у Києві.
           </p>
         </div>
       </section>

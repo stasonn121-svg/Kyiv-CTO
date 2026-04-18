@@ -29,10 +29,10 @@ export default function ContactsPage() {
               Об&apos;єкт: Київ, Оболонь
             </span>
             <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none mb-6">
-              AUTO SERVICE GARAGE
+              Контакти СТО Garage
             </h1>
             <p className="text-on-surface-variant font-light text-lg max-w-lg leading-relaxed mb-6">
-              Високоточна автомобільна діагностика та інжиніринг у Києві. Професійний сервіс для автомобілів будь-яких марок.
+              Автосервіс на Оболоні в Києві. Запишіться на діагностику та ремонт авто за телефоном або через онлайн-форму.
             </p>
             <a
               href={`https://www.google.com/maps/dir/?api=1&destination=${SITE_CONFIG.geo.lat},${SITE_CONFIG.geo.lng}`}

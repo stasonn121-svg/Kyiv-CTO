@@ -25,11 +25,11 @@ export default async function PortfolioPage() {
             Наші / Роботи
           </span>
           <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-[0.9] mb-6">
-            Інженерна <span className="text-primary-container">точність.</span>
+            Наші <span className="text-primary-container">роботи</span>
           </h1>
           <p className="text-on-surface-variant text-lg max-w-xl">
-            Ознайомтесь з нашими кейсами — від діагностики до капітального
-            ремонту. Кожен проєкт виконано з максимальною увагою до деталей.
+            Приклади виконаних ремонтів на СТО Garage в Києві — від комп&apos;ютерної
+            діагностики до капітального ремонту двигуна. Кожен проєкт виконано з максимальною увагою до деталей.
           </p>
         </div>
       </section>

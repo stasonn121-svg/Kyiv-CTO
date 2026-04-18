@@ -5,8 +5,12 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     name: SITE_CONFIG.name,
+    alternateName: "СТО Гараж",
     url: SITE_CONFIG.url,
     telephone: `+380${SITE_CONFIG.phone.replace(/\s/g, "").replace(/^0/, "")}`,
+    image: `${SITE_CONFIG.url}/logo.png`,
+    description:
+      "Професійний автосервіс на Оболоні в Києві. Діагностика, ремонт двигуна, ходової частини, гальм, електрики. Гарантія до 24 місяців.",
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE_CONFIG.address.street,
@@ -26,19 +30,57 @@ export default function StructuredData() {
       opens: "09:00",
       closes: "18:00",
     },
-    sameAs: [SITE_CONFIG.instagram],
+    priceRange: "₴₴",
+    currenciesAccepted: "UAH",
+    paymentAccepted: "Готівка, Картка",
+    sameAs: [SITE_CONFIG.instagram, SITE_CONFIG.googleMapsUrl],
+    hasMap: SITE_CONFIG.googleMapsUrl,
     serviceType: [
-      "Діагностика автомобіля",
+      "Комп'ютерна діагностика автомобіля",
       "Ремонт двигуна",
       "Ремонт ходової частини",
-      "Обслуговування гальмівної системи",
-      "Технічне обслуговування",
-      "Ремонт електрики",
+      "Ремонт гальмівної системи",
+      "Технічне обслуговування авто",
+      "Ремонт електрики автомобіля",
+      "Заміна мастила та фільтрів",
+      "Розвал-сходження",
+      "Ремонт підвіски",
+      "Капітальний ремонт двигуна",
     ],
-    areaServed: {
-      "@type": "City",
-      name: "Київ",
+    areaServed: [
+      { "@type": "City", name: "Київ" },
+      { "@type": "AdministrativeArea", name: "Оболонь" },
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "48",
+      bestRating: "5",
+      worstRating: "1",
     },
+    review: [
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Олександр К." },
+        reviewRating: { "@type": "Rating", ratingValue: "5" },
+        reviewBody:
+          "Найкращий сервіс у Києві. Ремонтував тут свою машину — підхід як до космічного корабля. Професійно, чітко і якісно.",
+      },
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Олена В." },
+        reviewRating: { "@type": "Rating", ratingValue: "5" },
+        reviewBody:
+          "Після дилера приїхала сюди на ТО. Здивував рівень діагностики — всі помилки показали на графіках, пояснили кожен пункт.",
+      },
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Ігор С." },
+        reviewRating: { "@type": "Rating", ratingValue: "5" },
+        reviewBody:
+          "Відновлювали ходову, знайшли всі проблеми, зробили все в ідеал. Справжні фанати своєї справи. Рекомендую всім!",
+      },
+    ],
   };
 
   return (
