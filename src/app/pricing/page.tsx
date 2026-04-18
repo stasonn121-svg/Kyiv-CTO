@@ -17,16 +17,14 @@ export default async function PricingPage() {
     <>
       {/* Hero */}
       <section className="pt-32 pb-12">
-        <div className="container mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between md:items-end gap-6 border-b border-outline-variant/20 pb-10">
-          <div className="max-w-2xl">
-            <span className="font-headline text-secondary text-sm tracking-[0.3em] uppercase mb-4 block">
-              СТО Garage / Оболонь
-            </span>
-            <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
-              Ціни на <span className="text-primary-container">ремонт авто</span>
-            </h1>
-          </div>
-          <p className="text-white/60 max-w-xs text-sm">
+        <div className="container mx-auto px-6 lg:px-10 border-b border-outline-variant/20 pb-10">
+          <span className="font-headline text-secondary text-sm tracking-[0.3em] uppercase mb-4 block">
+            СТО Garage / Оболонь
+          </span>
+          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-[0.9] mb-6">
+            Ціни на <span className="text-primary-container">ремонт авто</span>
+          </h1>
+          <p className="text-white/60 max-w-lg text-sm">
             Прозоре ціноутворення на технічне обслуговування. Ціни вказані без урахування запчастин.
           </p>
         </div>
