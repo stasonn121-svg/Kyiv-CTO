@@ -66,7 +66,7 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="absolute top-full left-0 right-0 glass-nav border-b border-outline-variant/20 md:hidden">
+        <div className="absolute top-full left-0 right-0 bg-background border-b border-outline-variant/20 md:hidden">
           <div className="px-6 py-4 space-y-4">
             {NAV_LINKS.map((link) => (
               <Link

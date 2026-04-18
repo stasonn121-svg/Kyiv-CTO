@@ -17,7 +17,7 @@ export default async function PricingPage() {
     <>
       {/* Hero */}
       <section className="pt-32 pb-12">
-        <div className="container mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-outline-variant/20 pb-10">
+        <div className="container mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-outline-variant/20 pb-10">
           <div className="max-w-2xl">
             <span className="font-headline text-secondary text-sm tracking-[0.3em] uppercase mb-4 block">
               СТО Garage / Оболонь
